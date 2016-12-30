@@ -56,4 +56,5 @@ new Tabular.Table({
     responsive: true, //didn't work, why? should I add the extension
     autoWidth: false, //didn't work, should I add the extension
 
+    //throttleRefresh: 5000 not needed for me
 });
