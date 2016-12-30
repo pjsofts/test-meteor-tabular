@@ -1,0 +1,15 @@
+<head>
+    <title>test-tabular</title>
+</head>
+
+<body>
+    <p> Welcome to meteor!</p>
+    <div class="container">
+        {{> tabular table=TabularTables.Books id="bookstableid" selector=selector class="table table-striped table-bordered tabled-condensed" }}
+    </div>
+
+</body>
+
+<template name="bookCheckoutCell">
+    <button type="button" class="btn btn-xs check-out">Check Out</button>
+</template>
