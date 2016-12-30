@@ -12,6 +12,15 @@ Template.body.helpers({
     }
 })
 
+Template.body.events({
+    'click tbody > tr': function (event){
+        var dataTable = $(event.target).closest('table').DataTable();
+        var rowData = dataTable.row(event.currentTarget).data();
+        if (!rowData) return;
+        console.log(rowData);
+    }
+})
+
 Template.bookCheckoutCell.events({
     'click .check-out'(){
         console.log("Checkout:" +  this._id);
