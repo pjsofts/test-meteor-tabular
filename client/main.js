@@ -10,7 +10,7 @@ Template.body.helpers({
     selector(){
         return {author: "Some girl"};
     }
-})
+});
 
 Template.body.events({
     'click tbody > tr': function (event){
@@ -18,8 +18,14 @@ Template.body.events({
         var rowData = dataTable.row(event.currentTarget).data();
         if (!rowData) return;
         console.log(rowData);
+    },
+    'click .test-search'(event){
+        var dt = $("#bookstableid").DataTable();
+        var indexOfColumnToSearch = 2;
+        dt.column(indexOfColumnToSearch).search('').draw();
+        console.log("Test Search!");
     }
-})
+});
 
 Template.bookCheckoutCell.events({
     'click .check-out'(){
